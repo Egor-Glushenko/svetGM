@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://egor-glushenko.github.io/svetGM/sitemap.xml
