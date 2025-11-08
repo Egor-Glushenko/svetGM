@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Свет GM — Каталог электротехнических товаров</title>
+    <meta name="description" content="Каталог Свет GM: светодиодные лампы, кабель и провод, выключатели и розетки, автоматика. Удобный поиск по категориям и фильтр по названию.">
+    <link rel="canonical" href="/catalog.html">
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/demo-ozon.js"></script>
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Свет GM — на главную">
+                <span class="brand-mark">⚡</span>
+                <span class="brand-name">Свет GM</span>
+            </a>
+            <nav class="nav" aria-label="Главное меню">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="catalog.html" class="nav-link is-active">Каталог</a>
+                <a href="contacts.html" class="nav-link">Контакты</a>
+            </nav>
+            <button id="cart-btn" class="btn btn-primary" aria-label="Корзина" style="position: relative; text-decoration: none;">
+                🛒 Корзина
+                <span id="cart-count" style="display: none; position: absolute; top: -8px; right: -8px; background: var(--err); color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main" class="section">
+        <div class="container">
+            <h1>Каталог</h1>
+            <div class="toolbar" role="search">
+                <input id="search" type="search" placeholder="Поиск по товарам" aria-label="Поиск по товарам">
+                <select id="category" aria-label="Фильтр по категории">
+                    <option value="all">Все категории</option>
+                    <option value="led">Светодиодные лампы</option>
+                    <option value="cable">Кабель и провод</option>
+                    <option value="switches">Выключатели и розетки</option>
+                    <option value="automation">Автоматика</option>
+                    <option value="fixtures">Светильники</option>
+                    <option value="outdoor">Уличное освещение</option>
+                </select>
+                <button id="load-ozon" class="btn btn-outline" style="white-space: nowrap;">
+                    🔄 Загрузить с Ozon
+                </button>
+            </div>
+
+            <div id="catalog" class="catalog-grid" aria-live="polite"></div>
+
+            <section class="section">
+                <h2 id="led">Светодиодные лампы</h2>
+                <p class="muted">Энергоэффективные решения для дома и офиса.</p>
+                <div id="catalog-led" class="catalog-grid" aria-live="polite"></div>
+            </section>
+            <section class="section">
+                <h2 id="cable">Кабель и провод</h2>
+                <p class="muted">Надёжная кабельно-проводниковая продукция.</p>
+                <div id="catalog-cable" class="catalog-grid" aria-live="polite"></div>
+            </section>
+            <section class="section">
+                <h2 id="switches">Выключатели и розетки</h2>
+                <p class="muted">Фурнитура для аккуратной и безопасной установки.</p>
+                <div id="catalog-switches" class="catalog-grid" aria-live="polite"></div>
+            </section>
+            <section class="section">
+                <h2 id="automation">Автоматика</h2>
+                <p class="muted">Автоматические выключатели, УЗО и сопутствующие изделия.</p>
+                <div id="catalog-automation" class="catalog-grid" aria-live="polite"></div>
+            </section>
+            <section class="section">
+                <h2 id="fixtures">Светильники</h2>
+                <p class="muted">Современные светильники для интерьера и экстерьера.</p>
+                <div id="catalog-fixtures" class="catalog-grid" aria-live="polite"></div>
+            </section>
+            <section class="section">
+                <h2 id="outdoor">Уличное освещение</h2>
+                <p class="muted">Надёжное освещение для улицы, сада и фасадов.</p>
+                <div id="catalog-outdoor" class="catalog-grid" aria-live="polite"></div>
+            </section>
+        </div>
+    </main>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="dialog">
+            <header>
+                <h3 id="modal-title">Информация о товаре</h3>
+                <button type="button" class="icon-btn" data-close aria-label="Закрыть">✕</button>
+            </header>
+            <div class="content" id="modal-content"></div>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+        <div class="dialog" style="max-width: 900px;">
+            <header>
+                <h3 id="cart-modal-title">Корзина</h3>
+                <button type="button" class="icon-btn" data-close-cart aria-label="Закрыть">✕</button>
+            </header>
+            <div class="content" id="cart-content"></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Свет GM. Все права защищены.</p>
+            <nav class="footer-nav">
+                <a href="index.html">Главная</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
